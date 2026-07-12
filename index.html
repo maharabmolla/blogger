@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tools Hub - একটি অসাধারণ টুলস ওয়েবসাইট</title>
+    <link rel="stylesheet" href="theme/css/main.css">
+    <link rel="stylesheet" href="theme/css/responsive.css">
+    <link rel="stylesheet" href="theme/css/animations.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo-section">
+                        <div class="logo" id="siteLogo">🛠️ Tools Hub</div>
+                        <p class="tagline" id="siteTagline">আপনার দৈনন্দিন সব টুলস এক জায়গায়</p>
+                    </div>
+                    <div class="header-controls">
+                        <button class="theme-toggle" id="themeToggle">🌙</button>
+                        <button class="menu-toggle" id="menuToggle">☰</button>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="navigation" id="mainNav">
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link active">হোম</a></li>
+                        <li><a href="#tools" class="nav-link">টুলস</a></li>
+                        <li><a href="#customizer" class="nav-link">কাস্টমাইজ</a></li>
+                        <li><a href="#about" class="nav-link">সম্পর্কে</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Google Ad Space (Top) -->
+        <div class="ad-space ad-top" id="adTop">
+            <div class="ad-placeholder">বিজ্ঞাপন স্থান - শীর্ষ</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero" id="home">
+                    <div class="hero-content">
+                        <h1 class="hero-title" id="heroTitle">স্বাগতম আপনার টুলস হাবে</h1>
+                        <p class="hero-subtitle" id="heroSubtitle">সহজ, দ্রুত এবং নির্ভরযোগ্য টুলস যা আপনার প্রতিদিনের কাজ করে তোলে সহজ</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="scrollToSection('tools')">এখনই শুরু করুন</button>
+                            <button class="btn btn-secondary" onclick="openCustomizer()">থিম কাস্টমাইজ করুন</button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <svg viewBox="0 0 200 200" class="hero-svg">
+                            <circle cx="100" cy="100" r="80" fill="#6366f1" opacity="0.1"/>
+                            <circle cx="100" cy="100" r="60" fill="#6366f1" opacity="0.2"/>
+                            <text x="100" y="110" text-anchor="middle" font-size="40" fill="#6366f1">⚙️</text>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- Tools Grid -->
+                <section class="tools-section" id="tools">
+                    <h2 class="section-title">জনপ্রিয় টুলস</h2>
+                    <div class="tools-grid" id="toolsGrid">
+                        <!-- Tools will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Google Ad Space (Middle) -->
+                <div class="ad-space ad-middle" id="adMiddle">
+                    <div class="ad-placeholder">বিজ্ঞাপন স্থান - মাঝে</div>
+                </div>
+
+                <!-- Featured Post -->
+                <section class="featured-post" id="featuredPost">
+                    <h2 class="section-title">বিশেষ পোস্ট</h2>
+                    <article class="post-card featured">
+                        <div class="post-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="post-content">
+                            <h3 id="featuredPostTitle">আমাদের নতুন টুলস সংযোজন</h3>
+                            <p id="featuredPostDesc">এই সপ্তাহে আমরা যুক্ত করেছি অনেক নতুন এবং দরকারি টুলস যা আপনার প্রতিদিনের কাজকর্মকে আরও সহজ করবে।</p>
+                            <div class="post-meta">
+                                <span id="featuredPostDate">১২ জুলাই, ২০২৬</span>
+                                <a href="#" class="read-more">সম্পূর্ণ পড়ুন →</a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Social Media Section -->
+                <section class="social-section">
+                    <h2 class="section-title">আমাদের সাথে যুক্ত থাকুন</h2>
+                    <div class="social-links" id="socialLinks">
+                        <!-- Social links will be loaded here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Google Ad Space (Bottom) -->
+        <div class="ad-space ad-bottom" id="adBottom">
+            <div class="ad-placeholder">বিজ্ঞাপন স্থান - নিচে</div>
+        </div>
+
+        <!-- Customizer Panel -->
+        <div class="customizer-panel" id="customizerPanel">
+            <div class="customizer-header">
+                <h2>থিম কাস্টমাইজার</h2>
+                <button class="close-btn" onclick="closeCustomizer()">✕</button>
+            </div>
+            <div class="customizer-content">
+                <!-- Color Scheme -->
+                <div class="customizer-section">
+                    <h3>রঙের থিম</h3>
+                    <div class="color-options">
+                        <div class="color-option" data-theme="default" onclick="applyTheme('default')">
+                            <div class="color-sample" style="background: #6366f1;"></div>
+                            <span>ডিফল্ট</span>
+                        </div>
+                        <div class="color-option" data-theme="dark" onclick="applyTheme('dark')">
+                            <div class="color-sample" style="background: #1e293b;"></div>
+                            <span>ডার্ক</span>
+                        </div>
+                        <div class="color-option" data-theme="ocean" onclick="applyTheme('ocean')">
+                            <div class="color-sample" style="background: #0369a1;"></div>
+                            <span>সমুদ্র</span>
+                        </div>
+                        <div class="color-option" data-theme="sunset" onclick="applyTheme('sunset')">
+                            <div class="color-sample" style="background: #ea580c;"></div>
+                            <span>সূর্যাস্ত</span>
+                        </div>
+                        <div class="color-option" data-theme="forest" onclick="applyTheme('forest')">
+                            <div class="color-sample" style="background: #15803d;"></div>
+                            <span>বন</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layout Options -->
+                <div class="customizer-section">
+                    <h3>লেআউট</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="sidebarToggle" onchange="toggleSidebar()">
+                        <span>সাইডবার দেখান</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="footerToggle" checked onchange="toggleFooter()">
+                        <span>ফুটার দেখান</span>
+                    </label>
+                </div>
+
+                <!-- Typography -->
+                <div class="customizer-section">
+                    <h3>ফন্ট আকার</h3>
+                    <div class="slider-group">
+                        <label>শিরোনাম: <span id="fontSizeDisplay">16</span>px</label>
+                        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" onchange="changeFontSize(this.value)">
+                    </div>
+                </div>
+
+                <!-- Site Info -->
+                <div class="customizer-section">
+                    <h3>সাইট তথ্য</h3>
+                    <input type="text" id="siteName" placeholder="সাইটের নাম" value="Tools Hub">
+                    <input type="text" id="siteTaglineInput" placeholder="ট্যাগলাইন" value="আপনার দৈনন্দিন সব টুলস এক জায়গায়">
+                    <button class="btn btn-primary" onclick="updateSiteInfo()">আপডেট করুন</button>
+                </div>
+
+                <!-- Advertisement Settings -->
+                <div class="customizer-section">
+                    <h3>বিজ্ঞাপন সেটিংস</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="adsToggle" checked onchange="toggleAds()">
+                        <span>বিজ্ঞাপন দেখান</span>
+                    </label>
+                    <input type="text" id="adsenseCode" placeholder="Google AdSense কোড" class="full-width">
+                    <button class="btn btn-primary" onclick="saveAdCode()">বিজ্ঞাপন কোড সংরক্ষণ করুন</button>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="customizer-section">
+                    <h3>সোশ্যাল মিডিয়া লিংক</h3>
+                    <input type="text" id="facebookUrl" placeholder="Facebook URL" class="full-width">
+                    <input type="text" id="twitterUrl" placeholder="Twitter URL" class="full-width">
+                    <input type="text" id="instagramUrl" placeholder="Instagram URL" class="full-width">
+                    <input type="text" id="youtubeUrl" placeholder="YouTube URL" class="full-width">
+                    <input type="text" id="linkedinUrl" placeholder="LinkedIn URL" class="full-width">
+                    <button class="btn btn-primary" onclick="saveSocialLinks()">সোশ্যাল লিংক সংরক্ষণ করুন</button>
+                </div>
+
+                <!-- Tools Management -->
+                <div class="customizer-section">
+                    <h3>টুলস ম্যানেজমেন্ট</h3>
+                    <input type="text" id="toolName" placeholder="টুলের নাম" class="full-width">
+                    <input type="text" id="toolUrl" placeholder="টুলের URL" class="full-width">
+                    <input type="text" id="toolIcon" placeholder="ইমোজি বা আইকন" class="full-width">
+                    <button class="btn btn-primary" onclick="addTool()">টুল যোগ করুন</button>
+                    <div id="toolsList" class="tools-list">
+                        <!-- Tools list will appear here -->
+                    </div>
+                </div>
+
+                <!-- Reset Settings -->
+                <div class="customizer-section">
+                    <h3>অন্যান্য</h3>
+                    <button class="btn btn-danger" onclick="resetAllSettings()">সব সেটিংস রিসেট করুন</button>
+                    <button class="btn btn-secondary" onclick="exportSettings()">সেটিংস এক্সপোর্ট করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customizer Toggle Button -->
+        <button class="customizer-toggle" id="customizerToggle" onclick="openCustomizer()">⚙️</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>সম্পর্কে</h3>
+                    <p id="footerAbout">এটি একটি আধুনিক এবং ব্যবহারকারী-বান্ধব টুলস সংগ্রহ যা আপনার দৈনন্দিন কাজকে সহজ করে তোলে।</p>
+                </div>
+                <div class="footer-section">
+                    <h3>দ্রুত লিংক</h3>
+                    <ul>
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#tools">টুলস</a></li>
+                        <li><a href="#">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>অনুসরণ করুন</h3>
+                    <div class="footer-social" id="footerSocial">
+                        <!-- Social icons will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Tools Hub. সর্বাধিকার সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme/js/storage.js"></script>
+    <script src="theme/js/tools.js"></script>
+    <script src="theme/js/customizer.js"></script>
+    <script src="theme/js/app.js"></script>
+</body>
+</html>
