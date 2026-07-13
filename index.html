@@ -1,255 +1,685 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Tools Hub - একটি অসাধারণ টুলস ওয়েবসাইট</title>
-    <link rel="stylesheet" href="theme/css/main.css">
-    <link rel="stylesheet" href="theme/css/responsive.css">
-    <link rel="stylesheet" href="theme/css/animations.css">
-</head>
-<body>
-    <div id="app">
-        <!-- Header -->
-        <header class="header" id="mainHeader">
-            <div class="container">
-                <div class="header-top">
-                    <div class="logo-section">
-                        <div class="logo" id="siteLogo">🛠️ Tools Hub</div>
-                        <p class="tagline" id="siteTagline">আপনার দৈনন্দিন সব টুলস এক জায়গায়</p>
-                    </div>
-                    <div class="header-controls">
-                        <button class="theme-toggle" id="themeToggle">🌙</button>
-                        <button class="menu-toggle" id="menuToggle">☰</button>
-                    </div>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="navigation" id="mainNav">
-                    <ul class="nav-menu">
-                        <li><a href="#home" class="nav-link active">হোম</a></li>
-                        <li><a href="#tools" class="nav-link">টুলস</a></li>
-                        <li><a href="#customizer" class="nav-link">কাস্টমাইজ</a></li>
-                        <li><a href="#about" class="nav-link">সম্পর্কে</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="bn"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"/&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+&lt;title&gt;Advanced Blogger Theme - Tools Hub&lt;/title&gt;
+&lt;style type="text/css"&gt;&lt;![CDATA[
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #ec4899;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --border-color: #e2e8f0;
+}
 
-        <!-- Google Ad Space (Top) -->
-        <div class="ad-space ad-top" id="adTop">
-            <div class="ad-placeholder">বিজ্ঞাপন স্থান - শীর্ষ</div>
-        </div>
+body.dark-theme {
+  --primary-color: #818cf8;
+  --text-dark: #f1f5f9;
+  --text-light: #cbd5e1;
+  --bg-light: #1e293b;
+  --bg-white: #0f172a;
+  --border-color: #334155;
+}
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="container">
-                <!-- Hero Section -->
-                <section class="hero" id="home">
-                    <div class="hero-content">
-                        <h1 class="hero-title" id="heroTitle">স্বাগতম আপনার টুলস হাবে</h1>
-                        <p class="hero-subtitle" id="heroSubtitle">সহজ, দ্রুত এবং নির্ভরযোগ্য টুলস যা আপনার প্রতিদিনের কাজ করে তোলে সহজ</p>
-                        <div class="hero-buttons">
-                            <button class="btn btn-primary" onclick="scrollToSection('tools')">এখনই শুরু করুন</button>
-                            <button class="btn btn-secondary" onclick="openCustomizer()">থিম কাস্টমাইজ করুন</button>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <svg viewBox="0 0 200 200" class="hero-svg">
-                            <circle cx="100" cy="100" r="80" fill="#6366f1" opacity="0.1"/>
-                            <circle cx="100" cy="100" r="60" fill="#6366f1" opacity="0.2"/>
-                            <text x="100" y="110" text-anchor="middle" font-size="40" fill="#6366f1">⚙️</text>
-                        </svg>
-                    </div>
-                </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-                <!-- Tools Grid -->
-                <section class="tools-section" id="tools">
-                    <h2 class="section-title">জনপ্রিয় টুলস</h2>
-                    <div class="tools-grid" id="toolsGrid">
-                        <!-- Tools will be loaded here -->
-                    </div>
-                </section>
+html {
+  scroll-behavior: smooth;
+}
 
-                <!-- Google Ad Space (Middle) -->
-                <div class="ad-space ad-middle" id="adMiddle">
-                    <div class="ad-placeholder">বিজ্ঞাপন স্থান - মাঝে</div>
-                </div>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
 
-                <!-- Featured Post -->
-                <section class="featured-post" id="featuredPost">
-                    <h2 class="section-title">বিশেষ পোস্ট</h2>
-                    <article class="post-card featured">
-                        <div class="post-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        <div class="post-content">
-                            <h3 id="featuredPostTitle">আমাদের নতুন টুলস সংযোজন</h3>
-                            <p id="featuredPostDesc">এই সপ্তাহে আমরা যুক্ত করেছি অনেক নতুন এবং দরকারি টুলস যা আপনার প্রতিদিনের কাজকর্মকে আরও সহজ করবে।</p>
-                            <div class="post-meta">
-                                <span id="featuredPostDate">১২ জুলাই, ২০২৬</span>
-                                <a href="#" class="read-more">সম্পূর্ণ পড়ুন →</a>
-                            </div>
-                        </div>
-                    </article>
-                </section>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-                <!-- Social Media Section -->
-                <section class="social-section">
-                    <h2 class="section-title">আমাদের সাথে যুক্ত থাকুন</h2>
-                    <div class="social-links" id="socialLinks">
-                        <!-- Social links will be loaded here -->
-                    </div>
-                </section>
-            </div>
-        </main>
+/* Header */
+.header {
+  background: var(--bg-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 0;
+}
 
-        <!-- Google Ad Space (Bottom) -->
-        <div class="ad-space ad-bottom" id="adBottom">
-            <div class="ad-placeholder">বিজ্ঞাপন স্থান - নিচে</div>
-        </div>
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        <!-- Customizer Panel -->
-        <div class="customizer-panel" id="customizerPanel">
-            <div class="customizer-header">
-                <h2>থিম কাস্টমাইজার</h2>
-                <button class="close-btn" onclick="closeCustomizer()">✕</button>
-            </div>
-            <div class="customizer-content">
-                <!-- Color Scheme -->
-                <div class="customizer-section">
-                    <h3>রঙের থিম</h3>
-                    <div class="color-options">
-                        <div class="color-option" data-theme="default" onclick="applyTheme('default')">
-                            <div class="color-sample" style="background: #6366f1;"></div>
-                            <span>ডিফল্ট</span>
-                        </div>
-                        <div class="color-option" data-theme="dark" onclick="applyTheme('dark')">
-                            <div class="color-sample" style="background: #1e293b;"></div>
-                            <span>ডার্ক</span>
-                        </div>
-                        <div class="color-option" data-theme="ocean" onclick="applyTheme('ocean')">
-                            <div class="color-sample" style="background: #0369a1;"></div>
-                            <span>সমুদ্র</span>
-                        </div>
-                        <div class="color-option" data-theme="sunset" onclick="applyTheme('sunset')">
-                            <div class="color-sample" style="background: #ea580c;"></div>
-                            <span>সূর্যাস্ত</span>
-                        </div>
-                        <div class="color-option" data-theme="forest" onclick="applyTheme('forest')">
-                            <div class="color-sample" style="background: #15803d;"></div>
-                            <span>বন</span>
-                        </div>
-                    </div>
-                </div>
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
 
-                <!-- Layout Options -->
-                <div class="customizer-section">
-                    <h3>লেআউট</h3>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="sidebarToggle" onchange="toggleSidebar()">
-                        <span>সাইডবার দেখান</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="footerToggle" checked onchange="toggleFooter()">
-                        <span>ফুটার দেখান</span>
-                    </label>
-                </div>
+.tagline {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 5px;
+}
 
-                <!-- Typography -->
-                <div class="customizer-section">
-                    <h3>ফন্ট আকার</h3>
-                    <div class="slider-group">
-                        <label>শিরোনাম: <span id="fontSizeDisplay">16</span>px</label>
-                        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" onchange="changeFontSize(this.value)">
-                    </div>
-                </div>
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
 
-                <!-- Site Info -->
-                <div class="customizer-section">
-                    <h3>সাইট তথ্য</h3>
-                    <input type="text" id="siteName" placeholder="সাইটের নাম" value="Tools Hub">
-                    <input type="text" id="siteTaglineInput" placeholder="ট্যাগলাইন" value="আপনার দৈনন্দিন সব টুলস এক জায়গায়">
-                    <button class="btn btn-primary" onclick="updateSiteInfo()">আপডেট করুন</button>
-                </div>
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
 
-                <!-- Advertisement Settings -->
-                <div class="customizer-section">
-                    <h3>বিজ্ঞাপন সেটিংস</h3>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="adsToggle" checked onchange="toggleAds()">
-                        <span>বিজ্ঞাপন দেখান</span>
-                    </label>
-                    <input type="text" id="adsenseCode" placeholder="Google AdSense কোড" class="full-width">
-                    <button class="btn btn-primary" onclick="saveAdCode()">বিজ্ঞাপন কোড সংরক্ষণ করুন</button>
-                </div>
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
 
-                <!-- Social Media Links -->
-                <div class="customizer-section">
-                    <h3>সোশ্যাল মিডিয়া লিংক</h3>
-                    <input type="text" id="facebookUrl" placeholder="Facebook URL" class="full-width">
-                    <input type="text" id="twitterUrl" placeholder="Twitter URL" class="full-width">
-                    <input type="text" id="instagramUrl" placeholder="Instagram URL" class="full-width">
-                    <input type="text" id="youtubeUrl" placeholder="YouTube URL" class="full-width">
-                    <input type="text" id="linkedinUrl" placeholder="LinkedIn URL" class="full-width">
-                    <button class="btn btn-primary" onclick="saveSocialLinks()">সোশ্যাল লিংক সংরক্ষণ করুন</button>
-                </div>
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
 
-                <!-- Tools Management -->
-                <div class="customizer-section">
-                    <h3>টুলস ম্যানেজমেন্ট</h3>
-                    <input type="text" id="toolName" placeholder="টুলের নাম" class="full-width">
-                    <input type="text" id="toolUrl" placeholder="টুলের URL" class="full-width">
-                    <input type="text" id="toolIcon" placeholder="ইমোজি বা আইকন" class="full-width">
-                    <button class="btn btn-primary" onclick="addTool()">টুল যোগ করুন</button>
-                    <div id="toolsList" class="tools-list">
-                        <!-- Tools list will appear here -->
-                    </div>
-                </div>
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
 
-                <!-- Reset Settings -->
-                <div class="customizer-section">
-                    <h3>অন্যান্য</h3>
-                    <button class="btn btn-danger" onclick="resetAllSettings()">সব সেটিংস রিসেট করুন</button>
-                    <button class="btn btn-secondary" onclick="exportSettings()">সেটিংস এক্সপোর্ট করুন</button>
-                </div>
-            </div>
-        </div>
+/* Main Content */
+.main-content {
+  padding: 60px 0;
+}
 
-        <!-- Customizer Toggle Button -->
-        <button class="customizer-toggle" id="customizerToggle" onclick="openCustomizer()">⚙️</button>
-    </div>
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 0;
+}
 
-    <!-- Footer -->
-    <footer class="footer" id="mainFooter">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>সম্পর্কে</h3>
-                    <p id="footerAbout">এটি একটি আধুনিক এবং ব্যবহারকারী-বান্ধব টুলস সংগ্রহ যা আপনার দৈনন্দিন কাজকে সহজ করে তোলে।</p>
-                </div>
-                <div class="footer-section">
-                    <h3>দ্রুত লিংক</h3>
-                    <ul>
-                        <li><a href="#home">হোম</a></li>
-                        <li><a href="#tools">টুলস</a></li>
-                        <li><a href="#">যোগাযোগ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>অনুসরণ করুন</h3>
-                    <div class="footer-social" id="footerSocial">
-                        <!-- Social icons will be loaded here -->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2026</span> Tools Hub. সর্বাধিকার সংরক্ষিত।</p>
-            </div>
-        </div>
-    </footer>
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
 
-    <script src="theme/js/storage.js"></script>
-    <script src="theme/js/tools.js"></script>
-    <script src="theme/js/customizer.js"></script>
-    <script src="theme/js/app.js"></script>
-</body>
-</html>
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Tools Grid */
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.tool-card {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.tool-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.tool-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.tool-btn {
+  padding: 8px 15px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Customizer */
+.customizer-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.customizer-toggle:hover {
+  transform: scale(1.1);
+}
+
+.customizer-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: var(--bg-white);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.customizer-panel.active {
+  right: 0;
+}
+
+.customizer-header {
+  padding: 20px;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.customizer-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.customizer-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.color-sample {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+input[type="text"], input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: inherit;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 60px 0 20px;
+  margin-top: 60px;
+  border-top: 2px solid var(--border-color);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .customizer-panel {
+    width: 350px;
+    right: -350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .customizer-panel {
+    width: 100vw;
+    right: -100vw;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+]]&gt;&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="app"&gt;
+  &lt;header class="header" id="mainHeader"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="header-top"&gt;
+        &lt;div&gt;
+          &lt;div class="logo" id="siteLogo"&gt;🛠️ Tools Hub&lt;/div&gt;
+          &lt;p class="tagline" id="siteTagline"&gt;আপনার দৈনন্দিন সব টুলস এক জায়গায়&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;button class="customizer-toggle" id="customizerToggle" onclick="openCustomizer()"&gt;⚙️&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class="main-content"&gt;
+    &lt;div class="container"&gt;
+      &lt;section class="hero" id="home"&gt;
+        &lt;div&gt;
+          &lt;h1 class="hero-title" id="heroTitle"&gt;স্বাগতম আপনার টুলস হাবে&lt;/h1&gt;
+          &lt;p class="hero-subtitle" id="heroSubtitle"&gt;সহজ, দ্রুত এবং নির্ভরযোগ্য টুলস যা আপনার প্রতিদিনের কাজকর্মকে আরও সহজ করে তোলে।&lt;/p&gt;
+          &lt;div class="hero-buttons"&gt;
+            &lt;button class="btn btn-primary" onclick="scrollToSection('tools')"&gt;এখনই শুরু করুন&lt;/button&gt;
+            &lt;button class="btn btn-secondary" onclick="openCustomizer()"&gt;থিম কাস্টমাইজ করুন&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class="tools-section" id="tools"&gt;
+        &lt;h2 class="section-title"&gt;জনপ্রিয় টুলস&lt;/h2&gt;
+        &lt;div class="tools-grid" id="toolsGrid"&gt;
+          &lt;!-- Tools will be loaded here --&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section style="padding: 60px 0; text-align: center;"&gt;
+        &lt;h2 class="section-title"&gt;আমাদের সাথে যুক্ত থাকুন&lt;/h2&gt;
+        &lt;div class="social-links" id="socialLinks"&gt;
+          &lt;!-- Social links will be loaded here --&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;div class="customizer-panel" id="customizerPanel"&gt;
+    &lt;div class="customizer-header"&gt;
+      &lt;h2&gt;থিম কাস্টমাইজার&lt;/h2&gt;
+      &lt;button class="close-btn" onclick="closeCustomizer()"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="customizer-section"&gt;
+      &lt;h3&gt;রঙের থিম&lt;/h3&gt;
+      &lt;div class="color-options"&gt;
+        &lt;button onclick="applyTheme('default')" style="background: none; border: none; cursor: pointer;"&gt;
+          &lt;div class="color-sample" style="background: #6366f1;"&gt;&lt;/div&gt;
+          &lt;div&gt;ডিফল্ট&lt;/div&gt;
+        &lt;/button&gt;
+        &lt;button onclick="applyTheme('dark')" style="background: none; border: none; cursor: pointer;"&gt;
+          &lt;div class="color-sample" style="background: #1e293b;"&gt;&lt;/div&gt;
+          &lt;div&gt;ডার্ক&lt;/div&gt;
+        &lt;/button&gt;
+        &lt;button onclick="applyTheme('ocean')" style="background: none; border: none; cursor: pointer;"&gt;
+          &lt;div class="color-sample" style="background: #0369a1;"&gt;&lt;/div&gt;
+          &lt;div&gt;সমুদ্র&lt;/div&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="customizer-section"&gt;
+      &lt;h3&gt;সাইট তথ্য&lt;/h3&gt;
+      &lt;input type="text" id="siteName" placeholder="সাইটের নাম" value="Tools Hub"/&gt;
+      &lt;input type="text" id="siteTaglineInput" placeholder="ট্যাগলাইন" value="আপনার দৈনন্দিন সব টুলস এক জায়গায়"/&gt;
+      &lt;button class="btn btn-primary" onclick="updateSiteInfo()" style="width: 100%; margin-top: 10px;"&gt;আপডেট করুন&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="customizer-section"&gt;
+      &lt;h3&gt;নতুন টুলস যোগ করুন&lt;/h3&gt;
+      &lt;input type="text" id="toolName" placeholder="টুলের নাম"/&gt;
+      &lt;input type="text" id="toolUrl" placeholder="টুলের URL"/&gt;
+      &lt;input type="text" id="toolIcon" placeholder="ইমোজি (যেমন: 📝)"/&gt;
+      &lt;button class="btn btn-primary" onclick="addTool()" style="width: 100%; margin-top: 10px;"&gt;যোগ করুন&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="customizer-section"&gt;
+      &lt;h3&gt;সোশ্যাল মিডিয়া&lt;/h3&gt;
+      &lt;input type="text" id="facebookUrl" placeholder="Facebook URL"/&gt;
+      &lt;input type="text" id="twitterUrl" placeholder="Twitter URL"/&gt;
+      &lt;input type="text" id="instagramUrl" placeholder="Instagram URL"/&gt;
+      &lt;button class="btn btn-primary" onclick="saveSocialLinks()" style="width: 100%; margin-top: 10px;"&gt;সংরক্ষণ করুন&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="customizer-section"&gt;
+      &lt;button class="btn btn-danger" onclick="resetAllSettings()" style="width: 100%;"&gt;সব রিসেট করুন&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;footer class="footer" id="mainFooter"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="footer-content"&gt;
+        &lt;div&gt;
+          &lt;h3&gt;সম্পর্কে&lt;/h3&gt;
+          &lt;p&gt;এটি একটি আধুনিক এবং ব্যবহারকারী-বান্ধব টুলস সংগ্রহ।&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3&gt;দ্রুত লিংক&lt;/h3&gt;
+          &lt;ul style="list-style: none;"&gt;
+            &lt;li&gt;&lt;a href="#home" style="text-decoration: none; color: var(--text-light);"&gt;হোম&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#tools" style="text-decoration: none; color: var(--text-light);"&gt;টুলস&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3&gt;অনুসরণ করুন&lt;/h3&gt;
+          &lt;div class="social-links" id="footerSocial"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="footer-bottom"&gt;
+        &lt;p&gt;&amp;copy; 2026 Tools Hub. সর্বাধিকার সংরক্ষিত।&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;&lt;![CDATA[
+const Storage = {
+  PREFIX: 'blogger_theme_',
+  save: function(key, value) {
+    try {
+      localStorage.setItem(this.PREFIX + key, JSON.stringify(value));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  },
+  get: function(key, defaultValue) {
+    try {
+      const item = localStorage.getItem(this.PREFIX + key);
+      return item ? JSON.parse(item) : defaultValue;
+    } catch (e) {
+      return defaultValue;
+    }
+  }
+};
+
+const Tools = {
+  DEFAULT_TOOLS: [
+    {id: 1, name: 'Word Counter', icon: '📊', url: '#'},
+    {id: 2, name: 'Text to Speech', icon: '🔊', url: '#'},
+    {id: 3, name: 'QR Code', icon: '📱', url: '#'},
+    {id: 4, name: 'JSON Formatter', icon: '{}', url: '#'},
+    {id: 5, name: 'Password Gen', icon: '🔐', url: '#'},
+    {id: 6, name: 'MD5 Hash', icon: '🔗', url: '#'}
+  ],
+  getAll: function() {
+    return Storage.get('tools', this.DEFAULT_TOOLS);
+  },
+  add: function(tool) {
+    const tools = this.getAll();
+    tool.id = Date.now();
+    tools.push(tool);
+    Storage.save('tools', tools);
+    this.renderGrid();
+  },
+  renderGrid: function() {
+    const grid = document.getElementById('toolsGrid');
+    if (!grid) return;
+    const tools = this.getAll();
+    grid.innerHTML = '';
+    tools.forEach(tool => {
+      const card = document.createElement('div');
+      card.className = 'tool-card';
+      card.innerHTML = `
+        <div class="tool-icon">${tool.icon}</div>
+        <h3 class="tool-name">${tool.name}</h3>
+        <button class="tool-btn" onclick="window.location.href='${tool.url}'">খুলুন</button>
+      `;
+      grid.appendChild(card);
+    });
+  }
+};
+
+window.scrollToSection = function(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior: 'smooth'});
+};
+
+window.openCustomizer = function() {
+  const panel = document.getElementById('customizerPanel');
+  if (panel) panel.classList.add('active');
+};
+
+window.closeCustomizer = function() {
+  const panel = document.getElementById('customizerPanel');
+  if (panel) panel.classList.remove('active');
+};
+
+window.applyTheme = function(theme) {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+  const settings = Storage.get('settings', {});
+  settings.theme = theme;
+  Storage.save('settings', settings);
+};
+
+window.updateSiteInfo = function() {
+  const name = document.getElementById('siteName').value;
+  const tagline = document.getElementById('siteTaglineInput').value;
+  const logo = document.getElementById('siteLogo');
+  const tag = document.getElementById('siteTagline');
+  if (logo) logo.textContent = name;
+  if (tag) tag.textContent = tagline;
+  const settings = Storage.get('settings', {});
+  settings.siteName = name;
+  settings.siteTagline = tagline;
+  Storage.save('settings', settings);
+  alert('আপডেট হয়েছে!');
+};
+
+window.addTool = function() {
+  const name = document.getElementById('toolName').value;
+  const url = document.getElementById('toolUrl').value;
+  const icon = document.getElementById('toolIcon').value;
+  if (!name || !url) {
+    alert('সব ফিল্ড পূরণ করুন!');
+    return;
+  }
+  Tools.add({name: name, url: url, icon: icon || '🛠️'});
+  document.getElementById('toolName').value = '';
+  document.getElementById('toolUrl').value = '';
+  document.getElementById('toolIcon').value = '';
+  alert('টুল যোগ হয়েছে!');
+};
+
+window.saveSocialLinks = function() {
+  const links = {
+    facebook: document.getElementById('facebookUrl').value,
+    twitter: document.getElementById('twitterUrl').value,
+    instagram: document.getElementById('instagramUrl').value
+  };
+  Storage.save('socialLinks', links);
+  renderSocialLinks();
+  alert('সংরক্ষিত হয়েছে!');
+};
+
+window.renderSocialLinks = function() {
+  const links = Storage.get('socialLinks', {});
+  const platforms = [
+    {key: 'facebook', icon: '👍', color: '#1877F2'},
+    {key: 'twitter', icon: '𝕏', color: '#000000'},
+    {key: 'instagram', icon: '📷', color: '#E4405F'}
+  ];
+  
+  const social = document.getElementById('socialLinks');
+  const footer = document.getElementById('footerSocial');
+  
+  if (social) {
+    social.innerHTML = '';
+    platforms.forEach(p => {
+      if (links[p.key]) {
+        const link = document.createElement('a');
+        link.href = links[p.key];
+        link.target = '_blank';
+        link.className = 'social-link';
+        link.textContent = p.icon;
+        link.style.backgroundColor = p.color;
+        social.appendChild(link);
+      }
+    });
+  }
+  
+  if (footer) {
+    footer.innerHTML = social ? social.innerHTML : '';
+  }
+};
+
+window.resetAllSettings = function() {
+  if (confirm('সব রিসেট করবেন?')) {
+    localStorage.clear();
+    location.reload();
+  }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    Tools.renderGrid();
+    renderSocialLinks();
+  });
+} else {
+  Tools.renderGrid();
+  renderSocialLinks();
+}
+]]&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
