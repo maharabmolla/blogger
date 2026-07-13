@@ -1,0 +1,497 @@
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"/&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+&lt;title&gt;Advanced Tools Hub&lt;/title&gt;
+&lt;b:skin&gt;
+&lt;![CDATA[
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #ec4899;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+body.dark-theme {
+  --primary-color: #818cf8;
+  --text-dark: #f1f5f9;
+  --text-light: #cbd5e1;
+  --bg-light: #1e293b;
+  --bg-white: #0f172a;
+  --border-color: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background: var(--bg-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.tagline {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 15px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.main-content {
+  padding: 40px 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 0;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.tools-section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.tool-card {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.tool-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.tool-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.tool-desc {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.ad-space {
+  background: var(--bg-light);
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin: 30px 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customizer-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: var(--bg-white);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+}
+
+.customizer-panel.active {
+  right: 0;
+}
+
+.customizer-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.customizer-toggle:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 60px 0 20px;
+  margin-top: 60px;
+  border-top: 2px solid var(--border-color);
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+]]&gt;
+&lt;/b:skin&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="app"&gt;
+&lt;header class="header"&gt;
+&lt;div class="container"&gt;
+&lt;div class="header-top"&gt;
+&lt;div class="logo-section"&gt;
+&lt;div class="logo"&gt;Advanced Tools Hub&lt;/div&gt;
+&lt;p class="tagline"&gt;Your Daily Tools in One Place&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;nav&gt;
+&lt;ul class="nav-menu"&gt;
+&lt;li&gt;&lt;a href="#home" class="nav-link"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tools" class="nav-link"&gt;Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#about" class="nav-link"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+
+&lt;main class="main-content"&gt;
+&lt;div class="container"&gt;
+
+&lt;section class="hero" id="home"&gt;
+&lt;div class="hero-content"&gt;
+&lt;h1 class="hero-title"&gt;Welcome to Tools Hub&lt;/h1&gt;
+&lt;p class="hero-subtitle"&gt;Easy, Fast and Reliable Tools for Your Daily Work&lt;/p&gt;
+&lt;div class="hero-buttons"&gt;
+&lt;button class="btn btn-primary" onclick="scrollToSection('tools')"&gt;Get Started&lt;/button&gt;
+&lt;button class="btn btn-secondary" onclick="openCustomizer()"&gt;Customize&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="ad-space" id="adTop"&gt;Advertisement Space - Top&lt;/div&gt;
+
+&lt;section class="tools-section" id="tools"&gt;
+&lt;h2 class="section-title"&gt;Popular Tools&lt;/h2&gt;
+&lt;div class="tools-grid" id="toolsGrid"&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="ad-space" id="adMiddle"&gt;Advertisement Space - Middle&lt;/div&gt;
+
+&lt;section style="padding: 60px 0;"&gt;
+&lt;h2 class="section-title"&gt;Follow Us&lt;/h2&gt;
+&lt;div class="social-links" id="socialLinks"&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="ad-space" id="adBottom"&gt;Advertisement Space - Bottom&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div class="customizer-panel" id="customizerPanel"&gt;
+&lt;div style="padding: 20px; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; background: white;"&gt;
+&lt;h2 style="display: inline-block; margin: 0;"&gt;Customizer&lt;/h2&gt;
+&lt;button onclick="closeCustomizer()" style="background: none; border: none; font-size: 24px; cursor: pointer; float: right;"&gt;X&lt;/button&gt;
+&lt;/div&gt;
+&lt;div style="padding: 20px;"&gt;
+&lt;h3 style="margin-bottom: 15px;"&gt;Theme&lt;/h3&gt;
+&lt;button onclick="applyTheme('default')" class="btn btn-primary" style="width: 48%; margin-right: 2%;"&gt;Default&lt;/button&gt;
+&lt;button onclick="applyTheme('dark')" class="btn btn-primary" style="width: 48%;"&gt;Dark&lt;/button&gt;
+&lt;/div&gt;
+&lt;div style="padding: 20px; border-top: 1px solid #e2e8f0;"&gt;
+&lt;h3 style="margin-bottom: 15px;"&gt;Site Settings&lt;/h3&gt;
+&lt;input type="text" id="siteName" placeholder="Site Name" value="Tools Hub" style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #e2e8f0; border-radius: 6px;"/&gt;
+&lt;button onclick="updateSiteInfo()" class="btn btn-primary" style="width: 100%; margin-top: 10px;"&gt;Update&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button class="customizer-toggle" onclick="openCustomizer()"&gt;Settings&lt;/button&gt;
+
+&lt;footer class="footer"&gt;
+&lt;div class="container"&gt;
+&lt;p&gt;Copyright 2026 - Advanced Tools Hub. All rights reserved.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+var Storage = {
+  PREFIX: 'blogger_theme_',
+  save: function(key, value) {
+    try {
+      localStorage.setItem(this.PREFIX + key, JSON.stringify(value));
+    } catch (e) {}
+  },
+  get: function(key, def) {
+    try {
+      var item = localStorage.getItem(this.PREFIX + key);
+      return item ? JSON.parse(item) : def;
+    } catch (e) {
+      return def;
+    }
+  }
+};
+
+var Tools = {
+  DEFAULT_TOOLS: [
+    {id: 1, name: 'Word Counter', icon: 'W', desc: 'Count words'},
+    {id: 2, name: 'Text to Speech', icon: 'S', desc: 'Convert text to audio'},
+    {id: 3, name: 'QR Code', icon: 'Q', desc: 'Generate QR codes'},
+    {id: 4, name: 'JSON Formatter', icon: 'J', desc: 'Format JSON'},
+    {id: 5, name: 'Password Gen', icon: 'P', desc: 'Generate password'},
+    {id: 6, name: 'MD5 Hash', icon: 'M', desc: 'Create MD5 hash'}
+  ],
+  getAll: function() {
+    return Storage.get('tools', this.DEFAULT_TOOLS);
+  },
+  renderGrid: function() {
+    var grid = document.getElementById('toolsGrid');
+    if (!grid) return;
+    var tools = this.getAll();
+    grid.innerHTML = '';
+    tools.forEach(function(tool) {
+      var card = document.createElement('div');
+      card.className = 'tool-card';
+      card.innerHTML = '<div class="tool-icon">' + tool.icon + '</div><h3 class="tool-name">' + tool.name + '</h3><p class="tool-desc">' + tool.desc + '</p>';
+      grid.appendChild(card);
+    });
+  }
+};
+
+window.scrollToSection = function(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior: 'smooth'});
+};
+
+window.openCustomizer = function() {
+  var panel = document.getElementById('customizerPanel');
+  if (panel) panel.classList.add('active');
+};
+
+window.closeCustomizer = function() {
+  var panel = document.getElementById('customizerPanel');
+  if (panel) panel.classList.remove('active');
+};
+
+window.applyTheme = function(theme) {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+};
+
+window.updateSiteInfo = function() {
+  var name = document.getElementById('siteName').value;
+  alert('Updated: ' + name);
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    Tools.renderGrid();
+  });
+} else {
+  Tools.renderGrid();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
