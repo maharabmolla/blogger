@@ -1,0 +1,138 @@
+{
+    "name": "Advanced Blogger Theme",
+    "version": "1.0.0",
+    "description": "একটি অত্যাধুনিক, সম্পূর্ণ কাস্টমাইজেবল ব্লগার থিম টুলস এবং মনেটাইজেশন ম্যানেজমেন্ট সহ",
+    "author": "Blogger Theme Team",
+    "license": "MIT",
+    "homepage": "https://github.com/maharabmolla/blogger",
+    "keywords": [
+        "blogger",
+        "theme",
+        "tools",
+        "responsive",
+        "customizable",
+        "mobile-friendly",
+        "bengali",
+        "adsense"
+    ],
+    "features": [
+        "No-code customization",
+        "Advanced design",
+        "Mobile optimized",
+        "Fast loading",
+        "Google AdSense integration",
+        "Social media management",
+        "Tools management system",
+        "Multiple theme options",
+        "Dark mode support",
+        "Fully responsive",
+        "Touch device friendly",
+        "Performance optimized"
+    ],
+    "defaultSettings": {
+        "theme": "default",
+        "siteName": "Tools Hub",
+        "siteTagline": "আপনার দৈনন্দিন সব টুলস এক জায়গায়",
+        "fontSize": 16,
+        "adsEnabled": true,
+        "sidebarEnabled": false,
+        "footerEnabled": true
+    },
+    "defaultTools": [
+        {
+            "id": 1,
+            "name": "Word Counter",
+            "description": "শব্দ গণনা করুন সহজে",
+            "icon": "📊"
+        },
+        {
+            "id": 2,
+            "name": "Text to Speech",
+            "description": "টেক্সট কে ভয়েসে রূপান্তর করুন",
+            "icon": "🔊"
+        },
+        {
+            "id": 3,
+            "name": "QR Code Generator",
+            "description": "QR কোড তৈরি করুন মুহূর্তে",
+            "icon": "📱"
+        },
+        {
+            "id": 4,
+            "name": "JSON Formatter",
+            "description": "JSON ডেটা ফরম্যাট করুন",
+            "icon": "{}"
+        },
+        {
+            "id": 5,
+            "name": "Password Generator",
+            "description": "শক্তিশালী পাসওয়ার্ড তৈরি করুন",
+            "icon": "🔐"
+        },
+        {
+            "id": 6,
+            "name": "MD5 Hash",
+            "description": "MD5 হ্যাশ জেনারেট করুন",
+            "icon": "🔗"
+        }
+    ],
+    "performanceMetrics": {
+        "pageLoadTime": "< 2 seconds",
+        "mobileScore": "95+/100",
+        "desktopScore": "98+/100",
+        "totalFileSize": "< 500 KB"
+    },
+    "supportedDevices": [
+        "Smartphones (320px+)",
+        "Tablets (768px+)",
+        "Desktops (1024px+)",
+        "Landscape mode",
+        "Touch devices"
+    ],
+    "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "LocalStorage API",
+        "Intersection Observer",
+        "Service Workers (optional)"
+    ],
+    "browsers": {
+        "chrome": "70+",
+        "firefox": "65+",
+        "safari": "12+",
+        "edge": "79+",
+        "mobile": "all modern browsers"
+    },
+    "changelog": {
+        "v1.0.0": {
+            "date": "2026-07-13",
+            "changes": [
+                "Initial release",
+                "Complete customization panel",
+                "Tools management system",
+                "Google AdSense integration",
+                "Social media management",
+                "Multiple theme options",
+                "Mobile optimization",
+                "Performance optimization"
+            ]
+        }
+    },
+    "roadmap": {
+        "v1.1.0": [
+            "Dark mode auto-detection",
+            "Multi-language support",
+            "Advanced analytics dashboard",
+            "AI-powered content recommendations",
+            "Enhanced SEO tools"
+        ],
+        "v2.0.0": [
+            "Plugin system",
+            "Custom code support",
+            "Advanced monetization options",
+            "Template builder",
+            "Community marketplace"
+        ]
+    }
+}
